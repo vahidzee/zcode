@@ -1,23 +1,23 @@
 # Zee Code
 
-ZCode is a custom compression algorithm I originally developed for a competition held for the Fall 2018 Datastructures
-and Algorithms course of Dr. Mahdi Safarnejad-Boroujeni at Sharif University of Technology, at which I became
+ZCode is a custom compression algorithm I originally developed for a competition held for the Spring 2019 Datastructures
+and Algorithms course of [Dr. Mahdi Safarnejad-Boroujeni](https://scholar.google.com/citations?user=TNfL9SIAAAAJ&hl=en) at [Sharif University of Technology](http://ce.sharif.edu/), at which I became
 first-place. The code is pretty slow and has a lot of room for optimization, but it is pretty readable. It can be an
 excellent educational resource for whoever is starting on compression algorithms.
 
 The algorithm is a cocktail of classical compression algorithms mixed and served for Unicode documents. It hinges around
-the LZW algorithm to create a finite size symbol dictionary; the results are then byte-coded into variable-length custom
-symbols, which I call zee codes! Finally, the symbol table is truncated accordingly, and the compressed document is
+the [LZW algorithm](https://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Welch) to create a finite size symbol dictionary; the results are then byte-coded into variable-length custom
+symbols, which I call `zee` codes! Finally, the symbol table is truncated accordingly, and the compressed document is
 encoded into a byte stream.
 
-Huffman trees highly inspire zee codes, but because in normal texts, symbols are usually much more uniformly distributed
+[Huffman trees](https://en.wikipedia.org/wiki/Huffman_coding) highly inspire `zee` codes, but because in normal texts, symbols are usually much more uniformly distributed
 than the original geometrical (or exponential) distribution assumption for effective Huffman coding, the gains of using
 variable-sized byte-codes both from an implementation and performance perspective outweighed bit Huffman encodings.
 Results may vary, but my tests showed a steady ~4-5x compression ratio on Farsi texts, which is pretty nice!
 
 ## Installation
 
-ZCode is available from pip, and requires only a 3.6 or higher python installation beforehand.
+ZCode is available on pip, and only requires a 3.6 or higher python installation beforehand.
 
 ```shell
 pip install -U zcode
